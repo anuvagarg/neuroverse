@@ -52,6 +52,8 @@ class SentimentViewController: UIViewController {
             emotionLabel = "anger"
         case "4":
             emotionLabel = "fear"
+        case "5":
+            emotionLabel = "surprise"
         default:
             emotionLabel = "unknown"
         }
@@ -79,6 +81,9 @@ class SentimentViewController: UIViewController {
             } else if sentiment == "fear" {
                 sentimentImageView.image = UIImage(named: "fear")
                 sentimentScoreTextView.text = "sentiment: fear"
+            } else if sentiment == "surprise" {
+                sentimentImageView.image = UIImage(named: "surprise")
+                sentimentScoreTextView.text = "sentiment: surprise"
             } else {
                 sentimentImageView.image = UIImage(named: "unknown")
                 sentimentScoreTextView.text = "sentiment: unknown"

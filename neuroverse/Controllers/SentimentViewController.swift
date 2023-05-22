@@ -31,34 +31,57 @@ class SentimentViewController: UIViewController {
                 let sentiment = analyzeSentiment(for: text)
                 displaySentiment(sentiment)
     }
-    func analyzeSentiment(for text: String) -> Double? {
-            let tagger = NLTagger(tagSchemes: [.sentimentScore])
-            tagger.string = text
-            
-            let (sentiment, _) = tagger.tag(at: text.startIndex, unit: .paragraph, scheme: .sentimentScore)
-            if let sentimentScore = sentiment?.rawValue {
-                if let score = Double(sentimentScore) {
-                    return score
-                }
-            }
-            return nil
+    func analyzeSentiment(for text: String) -> String {
+        guard let modelURL = Bundle.main.url(forResource: "MyTextClassifier", withExtension: "mlmodelc") else {
+            fatalError("Failed to load the MLModel.")
         }
-    func displaySentiment(_ sentiment: Double?) {
+        guard let model = try? NLModel(contentsOf: modelURL) else {
+            fatalError("Failed to create the NLModel.")
+        }
+        let predictedLabel = model.predictedLabel(for: text)
+        // Example implementation using a switch statement for emotion mapping
+        var emotionLabel = ""
+        switch predictedLabel {
+        case "0":
+            emotionLabel = "sadness"
+        case "1":
+            emotionLabel = "joy"
+        case "2":
+            emotionLabel = "love"
+        case "3":
+            emotionLabel = "anger"
+        case "4":
+            emotionLabel = "fear"
+        default:
+            emotionLabel = "unknown"
+        }
+        return emotionLabel
+    }
+    func displaySentiment(_ sentiment: String?) {
             guard let sentiment = sentiment else {
                 sentimentImageView.image = UIImage(named: "neutral")
                 sentimentScoreTextView.text = "Unable to determine sentiment"
                 return
             }
             
-            if sentiment > 0 {
-                sentimentImageView.image = UIImage(named: "positive")
-                sentimentScoreTextView.text = "Sentiment score: \(sentiment)"
-            } else if sentiment < 0 {
-                sentimentImageView.image = UIImage(named: "negative")
-                sentimentScoreTextView.text = "Sentiment score: \(sentiment)"
+            if sentiment == "sadness" {
+                sentimentImageView.image = UIImage(named: "sadness")
+                sentimentScoreTextView.text = "sentiment: sadness"
+            } else if sentiment == "joy" {
+                sentimentImageView.image = UIImage(named: "joy")
+                sentimentScoreTextView.text = "sentiment: joy"
+            } else if sentiment == "love" {
+                sentimentImageView.image = UIImage(named: "love")
+                sentimentScoreTextView.text = "sentiment: love"
+            } else if sentiment == "anger"{
+                sentimentImageView.image = UIImage(named: "anger")
+                sentimentScoreTextView.text = "sentiment: anger"
+            } else if sentiment == "fear" {
+                sentimentImageView.image = UIImage(named: "fear")
+                sentimentScoreTextView.text = "sentiment: fear"
             } else {
-                sentimentImageView.image = UIImage(named: "neutral")
-                sentimentScoreTextView.text = "Sentiment score: \(sentiment)"
+                sentimentImageView.image = UIImage(named: "unknown")
+                sentimentScoreTextView.text = "sentiment: unknown"
             }
         }
     

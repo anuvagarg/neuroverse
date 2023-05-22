@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; configuration.title = "Scan Text"; ObjectID = "9EO-ot-ODW"; */
+"9EO-ot-ODW.configuration.title" = "Scan Text";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9EO-ot-ODW"; */
+"9EO-ot-ODW.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Speech to text"; ObjectID = "Rz9-Dc-8yI"; */
+"Rz9-Dc-8yI.configuration.title" = "Speech to text";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Rz9-Dc-8yI"; */
+"Rz9-Dc-8yI.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Analyze"; ObjectID = "b1d-u0-Yt6"; */
+"b1d-u0-Yt6.configuration.title" = "Analyze";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "b1d-u0-Yt6"; */
+"b1d-u0-Yt6.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Sentiment Analysis"; ObjectID = "m0n-CO-Xo4"; */
+"m0n-CO-Xo4.configuration.title" = "Sentiment Analysis";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "m0n-CO-Xo4"; */
+"m0n-CO-Xo4.normalTitle" = "Button";

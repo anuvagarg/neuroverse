@@ -15,6 +15,7 @@
 		F966D8642A18ABB200BC50B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F966D8622A18ABB200BC50B2 /* LaunchScreen.storyboard */; };
 		F966D8712A18F56A00BC50B2 /* ScanTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966D8702A18F56A00BC50B2 /* ScanTextViewController.swift */; };
 		F99D40592A1974190037FE03 /* SentimentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99D40582A1974190037FE03 /* SentimentViewController.swift */; };
+		F9A5BBC32A1BB7F000F76E2F /* MyTextClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F9A5BBC22A1BB7F000F76E2F /* MyTextClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F966D8652A18ABB200BC50B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F966D8702A18F56A00BC50B2 /* ScanTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTextViewController.swift; sourceTree = "<group>"; };
 		F99D40582A1974190037FE03 /* SentimentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentViewController.swift; sourceTree = "<group>"; };
+		F9A5BBC22A1BB7F000F76E2F /* MyTextClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = MyTextClassifier.mlmodel; path = Models/MyTextClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				F966D8602A18ABB200BC50B2 /* Assets.xcassets */,
 				F966D8622A18ABB200BC50B2 /* LaunchScreen.storyboard */,
 				F966D8652A18ABB200BC50B2 /* Info.plist */,
+				F9A5BBC22A1BB7F000F76E2F /* MyTextClassifier.mlmodel */,
 			);
 			path = neuroverse;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9A5BBC32A1BB7F000F76E2F /* MyTextClassifier.mlmodel in Sources */,
 				F966D8712A18F56A00BC50B2 /* ScanTextViewController.swift in Sources */,
 				F966D85C2A18ABAA00BC50B2 /* ViewController.swift in Sources */,
 				F966D8582A18ABAA00BC50B2 /* AppDelegate.swift in Sources */,

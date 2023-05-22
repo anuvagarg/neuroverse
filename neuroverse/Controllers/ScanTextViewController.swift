@@ -48,9 +48,13 @@ class ScanTextViewController: UIViewController, VNDocumentCameraViewControllerDe
             for observation in observations {
                 let candidate = observation.topCandidates(maximumCandidates).first
                 recognizedText += candidate?.string ?? " " + "\n "
+                if let recognizedText = candidate?.string {
+                        let confidence = candidate?.confidence ?? 0.0
+                        let textWithConfidence = "\(recognizedText) (Confidence: \(confidence))"
+                        print(textWithConfidence)
+                    }
             }
             self.scanTextView.text = recognizedText
-            
         }
         textRecognitionRequest.recognitionLevel = .accurate
         self.requests = [textRecognitionRequest]
